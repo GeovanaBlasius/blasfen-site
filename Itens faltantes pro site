@@ -1,0 +1,4 @@
+--Google Analytics: crie a conta e cole o ID em js/main.js, na linha var BLASFEN_GA_ID = '';. Enquanto o ID estiver vazio, o aviso de cookies não aparece, porque não há nada a pedir.
+Hospedagem: precisa aceitar .htaccess (Hostinger, HostGator, Locaweb e KingHost aceitam), ter SSL ativo e backup diário.
+--Google: cadastrar o site no Search Console e criar o Perfil da Empresa no Google.
+Textos legais: uma revisão jurídica rápida da Política de Privacidade e dos Termos de Uso.
