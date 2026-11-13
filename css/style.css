@@ -101,6 +101,7 @@ p{ margin:0 0 1em; color:var(--muted); max-width:64ch; }
     display:none; border-bottom:1px solid var(--line);
   }
   .nav.is-open{ display:flex; }
+  .nav{ gap:0; }
   .nav a{ padding:14px 0; border-bottom:1px solid var(--line); font-size:1.05rem; }
   .nav a[aria-current="page"]::after{ display:none; }
   .nav a[aria-current="page"]{ color:var(--accent-text); }
@@ -826,4 +827,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .lines-group + .lines-group{ margin-top:80px; padding-top:72px; border-top:1px solid var(--line-strong); }
 @media (max-width:620px){
   .lines-group + .lines-group{ margin-top:56px; padding-top:48px; }
+}
+
+/* Respiro entre seções no mobile: o padding de 104px (pensado pra desktop)
+   deixa vãos enormes entre blocos numa tela de celular. */
+@media (max-width:760px){
+  section{ padding:72px 0; }
+  .section-head{ margin-bottom:34px; }
+}
+@media (max-width:480px){
+  section{ padding:56px 0; }
 }
