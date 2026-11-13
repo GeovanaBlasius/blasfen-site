@@ -1,6 +1,6 @@
 # Blasfen Lubrificantes Industriais
 
-> Distribuidor autorizado de lubrificantes industriais com sede em Rio do Sul – SC, Brasil. Representa as marcas Arbuz Química, Internacional Lubrificantes Especiais e Eco Spray. Atende os segmentos alimentício, florestal, agrícola, construção civil, naval, mineração e industrial/metalúrgico, com consultoria técnica pré e pós-venda.
+> Distribuidor autorizado de lubrificantes industriais com sede em Rio do Sul – SC, Brasil. Distribuidor autorizado da Arbuz Química. Atende os segmentos alimentício, florestal, agrícola, construção civil e industrial/metalúrgico, com consultoria técnica pré e pós-venda.
 
 ## Contato
 - Telefone: +55 47 3300-3220
@@ -9,17 +9,14 @@
 - Endereço: Rodovia BR 470, 3187 - KM 136, Navegantes, Rio do Sul - SC, Brasil
 
 ## Linhas de produto
-- [Desengraxantes](/produtos/desengraxantes): base água e base solvente, não inflamáveis e atóxicos.
+- [Desengraxantes](/produtos/desengraxantes): à base d'água (ARCLEANING) e à base de solventes (ARSOLV).
 - [Metalworking](/produtos/metalworking): óleos de corte integral e solúvel, protetivos, de estampagem, desmoldantes.
 - [Graxas e Lubrificantes Especiais](/produtos/graxas-lubrificantes-especiais): redutores, compressores, correntes, rolamentos, motores elétricos, acoplamentos, linha atóxica NSF-H1 disponível.
 - [Pastas de Montagem](/produtos/pastas-de-montagem): anti-tribocorrosão para altas temperaturas e cargas.
 - [Indústria de Plásticos](/produtos/industria-plasticos): lubrificantes para injetoras e extrusoras de polipropileno.
-- [Florestal](/produtos/florestal): lubrificantes de alta performance para pinos, buchas e articulações.
-- [Eco Spray Desengripante](/produtos/eco-spray-desengripante): multiuso industrial, automotivo e doméstico.
 
 ## Outras páginas
 - [Sobre a Blasfen](/sobre)
-- [Blog técnico](/blog/)
 - [Contato](/contato)
 - [Política de Privacidade](/politica-de-privacidade)
 

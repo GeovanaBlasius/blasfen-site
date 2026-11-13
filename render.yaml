@@ -1,0 +1,55 @@
+services:
+  - type: web
+    name: blasfen-site
+    env: static
+    buildCommand: "echo 'Site estático, sem build necessário'"
+    staticPublishPath: ./dist
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    routes:
+      # URLs amigáveis (o Render não lê o .htaccess, então essas rotas substituem a regra 3 dele)
+      - type: rewrite
+        source: /sobre
+        destination: /sobre.html
+      - type: rewrite
+        source: /contato
+        destination: /contato.html
+      - type: rewrite
+        source: /obrigado
+        destination: /obrigado.html
+      - type: rewrite
+        source: /politica-de-privacidade
+        destination: /politica-de-privacidade.html
+      - type: rewrite
+        source: /termos-de-uso
+        destination: /termos-de-uso.html
+      - type: rewrite
+        source: /produtos/desengraxantes
+        destination: /produtos/desengraxantes.html
+      - type: rewrite
+        source: /produtos/eco-spray-desengripante
+        destination: /produtos/eco-spray-desengripante.html
+      - type: rewrite
+        source: /produtos/florestal
+        destination: /produtos/florestal.html
+      - type: rewrite
+        source: /produtos/graxas-lubrificantes-especiais
+        destination: /produtos/graxas-lubrificantes-especiais.html
+      - type: rewrite
+        source: /produtos/industria-plasticos
+        destination: /produtos/industria-plasticos.html
+      - type: rewrite
+        source: /produtos/metalworking
+        destination: /produtos/metalworking.html
+      - type: rewrite
+        source: /produtos/pastas-de-montagem
+        destination: /produtos/pastas-de-montagem.html
