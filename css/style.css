@@ -236,7 +236,7 @@ section{ padding:104px 0; }
 
 /* Cards genéricos (fallback de páginas que ainda usam grade) */
 .product-card{
-  display:block; background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius-m);
+  display:flex; flex-direction:column; background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius-m);
   padding:22px; text-decoration:none; color:inherit; transition:border-color .2s;
 }
 .product-card:hover{ border-color:var(--accent); }
@@ -246,7 +246,7 @@ section{ padding:104px 0; }
 .torn-frame--contain{ object-fit:contain; }
 .product-card__badge{ display:none; }
 .product-card h3{ margin-bottom:8px; }
-.product-card p{ font-size:.97rem; margin-bottom:0; }
+.product-card p{ font-size:.97rem; margin-bottom:0; flex:1 0 auto; }
 .product-card__tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
 .tag{
   font-size:.82rem; font-weight:550; color:var(--text);
