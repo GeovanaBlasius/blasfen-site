@@ -27,6 +27,7 @@
   --radius-s: 4px;
   --radius-m: 6px;
   --radius-l: 8px;
+  --radius-pill: 999px;
   --container: 1200px;
   --gutter: 24px;
 }
@@ -250,14 +251,14 @@ section{ padding:104px 0; }
 .tag{
   font-size:.82rem; font-weight:550; color:var(--text);
   background:var(--bg-3); border:1px solid var(--line-strong);
-  padding:4px 11px; border-radius:var(--radius-s);
+  padding:4px 11px; border-radius:var(--radius-pill);
 }
 
 /* ---------- Segmentos ---------- */
 .segment-list{ display:flex; flex-wrap:wrap; gap:10px; }
 .segment-list span{
   font-size:.98rem; font-weight:550; color:var(--text);
-  border:1px solid var(--line-strong); border-radius:var(--radius-s); padding:9px 18px; background:rgba(255,255,255,.02);
+  border:1px solid var(--line-strong); border-radius:var(--radius-pill); padding:9px 18px; background:rgba(255,255,255,.02);
 }
 
 /* ---------- Ícones ---------- */
@@ -409,7 +410,7 @@ article.post-body a{ color:var(--accent-text); }
 .hero--split h1{ font-size:clamp(2.6rem, 5.4vw, 4.4rem); line-height:1.02; }
 .hero--split .hero__inner{ padding-bottom:0; }
 .pill{
-  display:inline-flex; align-items:center; gap:8px; padding:7px 16px; border-radius:var(--radius-s);
+  display:inline-flex; align-items:center; gap:8px; padding:7px 16px; border-radius:var(--radius-pill);
   border:1px solid rgba(255,255,255,.28); background:rgba(255,255,255,.06);
   color:var(--text); font-size:.92rem; font-weight:500; margin-bottom:22px;
 }
@@ -655,7 +656,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .brand-hero__lead{ color:#E4E6E8; font-size:1.15rem; max-width:620px; margin:0 auto 24px; text-shadow:0 1px 12px rgba(0,0,0,.5); }
 .brand-hero__facts{ list-style:none; padding:0; margin:0 0 32px; display:flex; flex-wrap:wrap; justify-content:center; gap:10px; }
 .brand-hero__facts li{
-  font-size:.9rem; font-weight:550; color:#fff; padding:7px 15px; border-radius:var(--radius-s);
+  font-size:.9rem; font-weight:550; color:#fff; padding:7px 15px; border-radius:var(--radius-pill);
   background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.28); backdrop-filter:blur(6px);
 }
 .brand-hero__actions{ display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
