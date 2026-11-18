@@ -510,8 +510,8 @@ article.post-body a{ color:var(--accent-text); }
    pagina (ja viu o catalogo), uma vez por navegador (js/main.js).
    Mesmo visual do antigo banner com foto, só que como dialog. */
 .popup-consultoria{
-  position:relative; overflow:hidden; isolation:isolate;
-  max-width:720px; width:calc(100% - 32px); margin:auto; border:1px solid rgba(255,255,255,.08);
+  position:fixed; inset:0; overflow:hidden; isolation:isolate;
+  max-width:720px; width:calc(100% - 32px); max-height:calc(100% - 32px); margin:auto; border:1px solid rgba(255,255,255,.08);
   color:var(--text); border-radius:var(--radius-l);
   padding:48px 44px; box-shadow:0 30px 80px rgba(0,0,0,.55);
 }

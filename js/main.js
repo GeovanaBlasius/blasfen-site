@@ -111,7 +111,9 @@ document.addEventListener('DOMContentLoaded', function () {
       var max = document.documentElement.scrollHeight - window.innerHeight;
       if (max <= 0 || (window.scrollY || document.documentElement.scrollTop) / max < 0.5) return;
       window.removeEventListener('scroll', maybeShowPopup);
+      var keepScroll = window.scrollY || document.documentElement.scrollTop;
       popup.showModal();
+      window.scrollTo({ top: keepScroll, left: 0, behavior: 'instant' });
       markPopupDone();
       track('popup_consultoria_aberto', { pagina: location.pathname });
     }
