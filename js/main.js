@@ -96,6 +96,31 @@ document.addEventListener('DOMContentLoaded', function () {
   var form = document.querySelector('form.form');
   if (form) form.addEventListener('submit', function () { track('envio_formulario', { segmento: (form.segmento || {}).value }); });
   if (document.body.hasAttribute('data-lead')) track('generate_lead', { metodo: 'formulario' });
+
+  // Pop-up de consultoria: dispara uma vez por navegador, quando o
+  // visitante ja rolou metade da pagina (sinal de que viu o catalogo
+  // mas ainda nao converteu).
+  var popup = document.getElementById('popup-consultoria');
+  if (popup && typeof popup.showModal === 'function') {
+    var POPUP_KEY = 'blasfen-popup-consultoria';
+    var popupDone = false;
+    try { popupDone = !!localStorage.getItem(POPUP_KEY); } catch (e) {}
+    function markPopupDone() { popupDone = true; try { localStorage.setItem(POPUP_KEY, '1'); } catch (e) {} }
+    function maybeShowPopup() {
+      if (popupDone) { window.removeEventListener('scroll', maybeShowPopup); return; }
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max <= 0 || (window.scrollY || document.documentElement.scrollTop) / max < 0.5) return;
+      window.removeEventListener('scroll', maybeShowPopup);
+      popup.showModal();
+      markPopupDone();
+      track('popup_consultoria_aberto', { pagina: location.pathname });
+    }
+    window.addEventListener('scroll', maybeShowPopup, { passive: true });
+    popup.addEventListener('click', function (e) { if (e.target === popup) popup.close(); });
+    popup.addEventListener('close', markPopupDone);
+    var popupCta = popup.querySelector('.btn--primary');
+    if (popupCta) popupCta.addEventListener('click', function () { track('popup_consultoria_clique', { pagina: location.pathname }); });
+  }
 });
 
 // Páginas de linha de produto: destaca no menu lateral o grupo que está na tela

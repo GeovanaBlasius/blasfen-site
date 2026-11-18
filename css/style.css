@@ -87,7 +87,7 @@ p{ margin:0 0 1em; color:var(--muted); max-width:64ch; }
 }
 .nav__cta{
   background:var(--accent); color:var(--accent-ink) !important; font-weight:650 !important;
-  padding:10px 18px !important; border-radius:var(--radius-m);
+  padding:10px 18px !important; border-radius:var(--radius-pill);
 }
 .nav__cta:hover{ background:var(--accent-hi); }
 .nav__cta::after{ display:none; }
@@ -116,7 +116,7 @@ p{ margin:0 0 1em; color:var(--muted); max-width:64ch; }
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:10px;
   font-family:var(--font); font-size:1rem; font-weight:650;
-  padding:13px 22px; border-radius:var(--radius-m); text-decoration:none;
+  padding:15px 26px; border-radius:var(--radius-pill); text-decoration:none;
   border:1px solid transparent; cursor:pointer; transition:background .15s, border-color .15s, color .15s;
 }
 .btn--primary{ background:var(--accent); color:var(--accent-ink); }
@@ -425,15 +425,15 @@ article.post-body a{ color:var(--accent-text); }
 .hero__photo--fade img:nth-of-type(2){ opacity:0; animation:heroFade 12s ease-in-out infinite; }
 @keyframes heroFade{ 0%,40%{ opacity:0; } 50%,90%{ opacity:1; } 100%{ opacity:0; } }
 .hero__photo-tag{
-  position:absolute; left:16px; bottom:16px; right:16px;
+  position:absolute; left:14px; bottom:14px; right:14px;
   background:rgba(21,23,26,.82); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.1); border-radius:var(--radius-m); padding:14px 16px;
-  display:flex; align-items:center; gap:14px;
+  border:1px solid rgba(255,255,255,.1); border-radius:var(--radius-m); padding:10px 12px;
+  display:flex; align-items:center; gap:10px;
 }
-.hero__photo-tag b{ display:block; font-size:1.05rem; color:var(--text); }
-.hero__photo-tag span{ font-size:.9rem; color:var(--muted); }
-.hero__photo-tag i{ flex:0 0 auto; width:44px; height:44px; border-radius:var(--radius-m); background:rgba(239,116,24,.14); border:1px solid rgba(239,116,24,.35); color:var(--accent); display:flex; align-items:center; justify-content:center; }
-.hero__photo-tag i svg{ width:22px; height:22px; stroke:currentColor; }
+.hero__photo-tag b{ display:block; font-size:.92rem; color:var(--text); }
+.hero__photo-tag span{ font-size:.8rem; color:var(--muted); }
+.hero__photo-tag i{ flex:0 0 auto; width:34px; height:34px; border-radius:var(--radius-s); background:rgba(239,116,24,.14); border:1px solid rgba(239,116,24,.35); color:var(--accent); display:flex; align-items:center; justify-content:center; }
+.hero__photo-tag i svg{ width:17px; height:17px; stroke:currentColor; }
 .scroll-cue{
   position:absolute; left:50%; bottom:-26px; transform:translateX(-50%); z-index:3;
   width:52px; height:52px; border-radius:50%; background:var(--accent); color:var(--accent-ink);
@@ -506,21 +506,34 @@ article.post-body a{ color:var(--accent-text); }
   .lines-grid > .product-card:last-child:nth-child(2n+1){ grid-column:1 / -1; }
 }
 
-/* Banner arredondado com foto */
-.banner{
-  position:relative; overflow:hidden; border-radius:var(--radius-l); padding:64px 56px;
-  border:1px solid rgba(255,255,255,.08); isolation:isolate;
+/* Pop-up de consultoria: dispara depois que o visitante rola ~50% da
+   pagina (ja viu o catalogo), uma vez por navegador (js/main.js).
+   Mesmo visual do antigo banner com foto, só que como dialog. */
+.popup-consultoria{
+  position:relative; overflow:hidden; isolation:isolate;
+  max-width:720px; width:calc(100% - 32px); margin:auto; border:1px solid rgba(255,255,255,.08);
+  color:var(--text); border-radius:var(--radius-l);
+  padding:48px 44px; box-shadow:0 30px 80px rgba(0,0,0,.55);
 }
-.banner__bg{ position:absolute; inset:0; background-size:cover; background-position:center; z-index:-2; }
-.banner::before{ content:""; position:absolute; inset:0; z-index:-1;
+.popup-consultoria__bg{ position:absolute; inset:0; background-size:cover; background-position:center; z-index:-2; }
+.popup-consultoria::before{ content:""; position:absolute; inset:0; z-index:-1;
   background:linear-gradient(100deg, rgba(16,18,20,.96) 0%, rgba(16,18,20,.85) 55%, rgba(16,18,20,.45) 100%); }
-.banner h2{ max-width:18ch; }
-.banner p{ max-width:52ch; color:#C9CDD0; font-size:1.08rem; }
-.banner ul{ list-style:none; padding:0; margin:22px 0 30px; display:grid; gap:10px; color:var(--text); }
-.banner li{ display:flex; gap:10px; align-items:center; }
-.banner li::before{ content:""; flex:0 0 auto; width:18px; height:18px; border-radius:50%;
+.popup-consultoria::backdrop{ background:rgba(10,11,13,.72); }
+.popup-consultoria[open]{ animation:popupIn .2s ease; }
+@keyframes popupIn{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce){ .popup-consultoria[open]{ animation:none; } }
+.popup-consultoria form{ position:absolute; top:14px; right:14px; z-index:1; }
+.popup-consultoria__close{ background:rgba(0,0,0,.3); border:0; color:var(--text); cursor:pointer; padding:8px; line-height:0; border-radius:50%; }
+.popup-consultoria__close:hover{ background:rgba(0,0,0,.5); }
+.popup-consultoria__close svg{ width:18px; height:18px; }
+.popup-consultoria h2{ max-width:18ch; margin:0 0 10px; }
+.popup-consultoria p{ max-width:40ch; color:#C9CDD0; font-size:1.08rem; margin:0; }
+.popup-consultoria ul{ list-style:none; padding:0; margin:22px 0 26px; display:grid; gap:10px; color:var(--text); }
+.popup-consultoria li{ display:flex; gap:10px; align-items:center; }
+.popup-consultoria li::before{ content:""; flex:0 0 auto; width:18px; height:18px; border-radius:50%;
   background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231A0E03' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/11px no-repeat; }
-@media (max-width:700px){ .banner{ padding:40px 24px; border-radius:var(--radius-l); } }
+@media (max-width:700px){ .popup-consultoria{ padding:32px 24px; } }
+@media (max-width:480px){ .popup-consultoria{ padding:28px 20px; } .popup-consultoria .btn{ width:100%; } }
 
 /* Perguntas frequentes em sanfona */
 .faq-wrap{ display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:64px; align-items:start; }
