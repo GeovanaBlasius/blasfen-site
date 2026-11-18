@@ -44,12 +44,21 @@ services:
       - type: rewrite
         source: /produtos/desengraxantes
         destination: /produtos/desengraxantes.html
-      - type: rewrite
+      # Linhas retiradas do site: redireciona em vez de servir a página antiga
+      # (sem isso, o Render mostrava a página do produto descontinuado normalmente,
+      # já que ele não lê o .htaccess, que já tinha esse redirecionamento)
+      - type: redirect
         source: /produtos/eco-spray-desengripante
-        destination: /produtos/eco-spray-desengripante.html
-      - type: rewrite
+        destination: /produtos/
+      - type: redirect
+        source: /produtos/eco-spray-desengripante.html
+        destination: /produtos/
+      - type: redirect
         source: /produtos/florestal
-        destination: /produtos/florestal.html
+        destination: /produtos/
+      - type: redirect
+        source: /produtos/florestal.html
+        destination: /produtos/
       - type: rewrite
         source: /produtos/graxas-lubrificantes-especiais
         destination: /produtos/graxas-lubrificantes-especiais.html

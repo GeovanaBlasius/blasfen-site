@@ -69,7 +69,7 @@ def main():
 
     # HTML: links amigáveis, caminhos absolutos, versão nos assets, minificação
     pages = [p for p in ROOT.rglob('*.html') if not (set(p.relative_to(ROOT).parts) & SKIP_DIRS)
-             and not any(part.startswith('_') for part in p.relative_to(ROOT).parts)]  # ignora pastas de backup (_backup-...)
+             and not any(part.startswith(('_', '.')) for part in p.relative_to(ROOT).parts)]  # ignora pastas de backup (_backup-...) e pastas ocultas de ferramentas (.claude, .agents, .git...)
     for page in pages:
         rel_page = page.relative_to(ROOT).as_posix()
         page_dir = os.path.dirname(rel_page)
